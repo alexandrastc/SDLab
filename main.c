@@ -49,17 +49,16 @@ int main()
                     scanf("%d", &method);
                     printf("\n");
 
+                    printf("Key: ");
+                    scanf("%d", &key);        
+
                     switch(method){
                         case 1:
-                            
-                            printf("Key: ");
-                            scanf("%d", &key);
-
                             caesar_encrypt(key, text);
                             isValid = true;
                             break;
                         case 2:
-                            printf("decrypt with key\n");
+                            caesar_decrypt(key, text);
                             isValid = true;
                             break;
                         case 3: 
