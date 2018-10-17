@@ -1,3 +1,3 @@
 # Data Security Lab
-Algorithms 
+# Algorithms
 LAB 1: Caesar cypher
