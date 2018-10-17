@@ -3,5 +3,6 @@
 
     void caesar_encrypt(int key, char* text);
     void caesar_decrypt(int key, char* text);
+    void caesar_brute_force(char* text);
 
 #endif

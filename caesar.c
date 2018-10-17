@@ -1,5 +1,6 @@
 #include "caesar.h"
 #include <stdio.h> 
+#include <ctype.h>
 #include <string.h>
 #include <stdbool.h>
 
@@ -23,8 +24,6 @@ char* remove_whitespace(char* input)
 
 void caesar_decrypt(int key, char* text)
 {
-    printf("Encrypted message: %s\n", text);
-
     if(key <= 0 || key > 26){
         printf("Key is not valid, please try again\n");
         return;
@@ -58,7 +57,6 @@ void caesar_decrypt(int key, char* text)
 
 void caesar_encrypt(int key, char* text)
 {
-    printf("Plaintext: %s\n", text);
  
     if(key <= 0 || key > 26 ){
         printf("Key is not valid, please try again\n");
@@ -89,4 +87,12 @@ void caesar_encrypt(int key, char* text)
     }
 
     printf("Encrypted message: %s\n", remove_whitespace(text));
+}
+
+void caesar_brute_force(char *text)
+{
+    for (int i=1; i<26; i++){
+        printf("Key: %d\n", i);
+        caesar_decrypt(1, text);
+    }
 }
