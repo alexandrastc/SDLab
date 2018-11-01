@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "caesar.h"
+#include "letterFreq.h"
 
 #define TEXT_SIZE 1000
 
@@ -34,6 +35,7 @@ int main()
     while(!hasChosen){
         printf("Choose a cypher. Your options are: \n");
         printf("1. Caesar cypher\n");
+        printf("2. Check letter frequency\n");
 
         printf("Your choice: ");
         scanf("%d", &choice);
@@ -49,7 +51,6 @@ int main()
                     scanf("%d", &method);
                     printf("\n");
 
-                    
                     switch(method){
                         case 1:
                             printf("Key: ");
@@ -72,6 +73,10 @@ int main()
                     }
                     
                 }
+                break;
+            case 2:
+                hasChosen = true;
+                letter_frequency(text);
                 break;
             default:
                 printf("Wrong value. \n\n");
