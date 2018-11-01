@@ -17,7 +17,7 @@ void letter_frequency (char *text)
 
     for (int i=0; i<textLen ; i++){
         if(isalpha(text[i])){
-            int position = text[i] - 'a';
+            int position = tolower(text[i]) - 'a';
             letters[position]++;
         }
     }
