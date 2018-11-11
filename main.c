@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include "caesar.h"
+#include "vigenere.h"
 #include "letterFreq.h"
 
 #define TEXT_SIZE 1000
@@ -14,6 +15,7 @@ int main()
     int choice = 0;
     int method = 0;
     int key = 0;
+    char charKey[100];
     bool hasChosen = false;
     bool isValid = false;
     FILE *f;
@@ -36,6 +38,7 @@ int main()
         printf("Choose a cypher. Your options are: \n");
         printf("1. Caesar cypher\n");
         printf("2. Check letter frequency\n");
+        printf("3. Vigenere\n");
 
         printf("Your choice: ");
         scanf("%d", &choice);
@@ -69,15 +72,46 @@ int main()
                             isValid = true;
                             break;
                         default:
+                            isValid = false;
                             printf("Wrong value. \n\n");
                     }
                     
                 }
                 break;
+
             case 2:
                 hasChosen = true;
                 letter_frequency(text);
                 break;
+
+            case 3:
+                hasChosen = true;
+                do {
+                    common_choices();
+                    printf("Your choice: ");
+                    scanf("%d", &method);
+                    printf("\n");
+
+                    switch(method){
+                        case 1:
+                            printf("Key: ");
+                            scanf("%s", charKey);        
+                            vigenere_encrypt(charKey, text);
+                            isValid = true;
+                            break;
+                        case 2:
+                            printf("Key: ");
+                            scanf("%s", charKey);        
+                            vigenere_decrypt(charKey, text);
+                            isValid = true;
+                            break;
+                        default:
+                            printf("Wrong value. \n\n");
+                    }
+
+                } while(!isValid);
+                break;
+            
             default:
                 printf("Wrong value. \n\n");
         }
