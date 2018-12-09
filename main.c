@@ -4,7 +4,6 @@
 #include "caesar.h"
 #include "vigenere.h"
 #include "letterFreq.h"
-
 #define TEXT_SIZE 1000
 
 void common_choices();
@@ -39,6 +38,7 @@ int main()
         printf("1. Caesar cypher\n");
         printf("2. Check letter frequency\n");
         printf("3. Vigenere\n");
+        printf("4. Playfair\n");
 
         printf("Your choice: ");
         scanf("%d", &choice);
