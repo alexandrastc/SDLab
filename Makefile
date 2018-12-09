@@ -12,6 +12,12 @@ playfair: playfair.o
 playfair.o: playfair.c
 	$(CC) $(CFLAGS) playfair.c
 
+beaufort: beaufort.o
+	$(CC) beaufort.o -o beaufort
+
+beaufort.o: beaufort.c
+	$(CC) $(CFLAGS) beaufort.c
+
 main.o: main.c
 	$(CC) $(CFLAGS) main.c
 
