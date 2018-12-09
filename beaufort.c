@@ -2,7 +2,6 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <string.h>
-#include "caesar.h"
 
 #define TEXT_SIZE 1000
 #define ALPHABET_SIZE 26
