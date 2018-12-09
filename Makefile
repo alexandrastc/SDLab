@@ -24,8 +24,5 @@ letterFreq.o: letterFreq.c
 vigenere.o: vigenere.c
 	$(CC) $(CFLAGS) vigenere.c
 
-playfair.o: playfair.c
-	$(CC) $(CFLAGS) playfair.c
-
 clean:
 	rm -rf *.o
